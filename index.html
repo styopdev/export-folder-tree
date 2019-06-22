@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zip To Preview</title>
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="css/dropzone.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="logo-wrapper">
+                <a href="#">
+                    <img src="img/logo_200x200.png" alt="logo">
+                </a>
+            </div>
+
+        </div><!--.sidebar-->
+        <div class="content">
+            <div id="zone">
+                <form action="/file-upload"
+                      class="dropzone"
+                      id="my-awesome-dropzone"></form>
+            </div>
+        </div><!--.content-->
+
+    </div>
+    <script src="js/dropzone.js"></script>
+    <script>
+        Dropzone.options.myAwesomeDropzone = {
+            paramName: "file", // The name that will be used to transfer the file
+            maxFiles: 1, // 1
+            maxFilesize: 2, // 2
+            accept: function(file, done) {
+                if (file.name.endsWith(".zip")) {
+                    done();
+                    return;
+                }
+                else {
+                    done("Only .zip files accepted.");
+                    // alert("Only .zip files accepted.");
+                }
+            },
+            init: function() {
+                this.on("addedfile", function() {
+                    if (this.files[1]!=null){
+                        this.removeFile(this.files[0]);
+                    }
+                });
+            },
+            init: function () {
+                this.on("error", function(file, message, xhr) {
+                    // if (xhr == null) this.removeFile(file); // perhaps not remove on xhr errors
+                    if (this.files[1]!=null){
+                        this.removeFile(this.files[0]);
+                    }
+                    console.log('message : ', message);
+                   // alert(message);
+                });
+            }
+        };
+        Dropzone.options.myAwesomeDropzone.on("complete", function(file) {
+            Dropzone.options.myAwesomeDropzone.removeFile(file);
+        });
+    </script>
+</body>
+</html>
