@@ -138,7 +138,7 @@
             accept: function(file, done) {
                 if (file.name.endsWith(".zip")) {
                     done();
-                    processFile(file);
+                    readFile(file);
                     return;
                 } else {
                     done("Only .zip files accepted.");
