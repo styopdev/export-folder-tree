@@ -30,42 +30,99 @@
 
     </div>
     <script src="js/dropzone.js"></script>
+    <script src="js/jszip.js"></script>
     <script>
+        var unzip = new JSZip();
+        var reader = new FileReader();
+
+        function toTree(filesList) {
+            var tree = [];
+            var nestLevel = 0;
+
+            filesList.forEach(file => {
+                var isFolder = file.endsWith('/'); 
+                var filePaths = file.split('/');
+
+                if (filePaths.length < nestLevel ) {
+                    nestLevel--;
+                }
+
+                if (isFolder) {
+                    tree.push({
+                        path: filePaths[nestLevel],
+                        nestLevel
+                    });
+                    nestLevel ++;
+                } else {
+                    tree.push({
+                        path: filePaths[filePaths.length - 1],
+                        nestLevel
+                    });
+                }
+            });
+            return tree;
+        }
+
         Dropzone.options.myAwesomeDropzone = {
-            paramName: "file", // The name that will be used to transfer the file
-            maxFiles: 1, // 1
-            maxFilesize: 2, // 2
+            paramName: "file",
+            maxFiles: 1,
+            maxFilesize: 2,
             accept: function(file, done) {
                 if (file.name.endsWith(".zip")) {
                     done();
+                    reader.readAsBinaryString(file);
+                    reader.onload = function(file) {
+
+                    unzip
+                        .loadAsync(file.target.result)
+                        .then(function (zip) {
+                            var fileNames = Object.keys(zip.files);
+                            var fileNamesTree = toTree(fileNames);
+
+                            var height = fileNames.length * 30 + 50;
+                            var canvasElement = document.createElement('canvas');
+
+                            canvasElement.setAttribute('id', 'tree-canvas');
+                            document.getElementById('zone').replaceWith(canvasElement);
+
+                            var canvas = document.getElementById('tree-canvas'); 
+                            canvas.width = 400;
+                            canvas.height = height;
+
+                            var context = canvas.getContext("2d");
+                            context.imageSmoothingEnabled = true;
+                            context.webkitImageSmoothingEnabled = true;
+                            context.mozImageSmoothingEnabled = true;
+
+                            context.fillRect(0, 0, canvas.width, height);
+
+                            fileNamesTree.forEach(function (filename, index) {
+                                context.beginPath();
+                                context.fillStyle = "#00FA00";
+                                context.font = "20px Arial, Helvetica, sans-serif";
+                                context.fillText(filename.path, 25 + filename.nestLevel *  20, 32 * index + 30);
+                            })
+                        });
+                    };
+
                     return;
-                }
-                else {
+                } else {
                     done("Only .zip files accepted.");
-                    // alert("Only .zip files accepted.");
                 }
             },
             init: function() {
                 this.on("addedfile", function() {
-                    if (this.files[1]!=null){
+                    if (this.files[1] != null){
                         this.removeFile(this.files[0]);
                     }
                 });
-            },
-            init: function () {
                 this.on("error", function(file, message, xhr) {
-                    // if (xhr == null) this.removeFile(file); // perhaps not remove on xhr errors
-                    if (this.files[1]!=null){
+                    if (this.files[1] != null){
                         this.removeFile(this.files[0]);
                     }
-                    console.log('message : ', message);
-                   // alert(message);
                 });
             }
         };
-        Dropzone.options.myAwesomeDropzone.on("complete", function(file) {
-            Dropzone.options.myAwesomeDropzone.removeFile(file);
-        });
     </script>
 </body>
 </html>
