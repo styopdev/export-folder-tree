@@ -20,15 +20,26 @@
             </div>
 
         </div><!--.sidebar-->
-        <div>
-            <label>
-                <input id="github-url" placeholder="Your github repository url" type="text">
-                <a id="generate" onclick="generateFromGithub()">Generate tree for github repository</a>
-            </label>
-        </div>
+
         <div class="content">
 
             <div id="zone">
+                <div id="options-box">
+                    <div class="mb-15">
+                        <span class="et-btn">Select File</span>
+                    </div>
+                    <div class="mb-15">
+                        <span class="ttu db">OR</span>
+                        <span class="db">Generate tree for github repository</span>
+                    </div>
+                    <label>
+                        <div class="et-form">
+                            <input id="github-url" class="et-btn-input" placeholder="Enter your github repository url..." type="text">
+                            <a id="generate" class="et-btn et-btn-submit" onclick="generateFromGithub()">Submit</a>
+                        </div>
+
+                    </label>
+                </div>
                 <form action="/file-upload"
                       class="dropzone"
                       id="my-awesome-dropzone"></form>

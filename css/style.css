@@ -55,6 +55,7 @@ body{
     background: #d9dcde;
 }
 #zone {
+    position: relative;
     background: #fff;
     width: 80%;
     height: 420px;
@@ -81,4 +82,78 @@ body{
 }
 #zone .dropzone .dz-preview .dz-details .dz-size{
     margin-bottom: 0;
+}
+.dropzone .dz-message {
+    padding-top: 40px;
+}
+#options-box {
+    width: 400px;
+    text-align: center;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background: #ebeff2;
+    border: 1px solid #808080;
+    padding: 15px 15px;
+}
+.et-form{
+    position: relative;
+}
+.et-btn{
+    background: #FE694E;
+    color: white;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid #FE694E;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.et-btn-input {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #808080;
+    border-radius: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+}
+.et-btn-submit{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 34px;
+}
+.db{
+    display: block;
+}
+
+.mb-15{
+    margin-bottom: 15px;
+}
+.ttu{
+    text-transform: uppercase;
 }
