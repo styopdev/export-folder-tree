@@ -46,8 +46,12 @@ function processFile(zip) {
     canvasElement.setAttribute('id', 'tree-canvas');
     document.getElementById('zone').replaceWith(canvasElement);
 
-    var canvas = document.getElementById('tree-canvas'); 
-    canvas.width = 400;
+    var content = document.getElementById("content");
+    content.classList.remove("flex");
+    document.getElementById("settings").style.display = "block";
+
+    var canvas = document.getElementById('tree-canvas');
+    canvas.width = 582;
     canvas.height = height;
 
     var context = canvas.getContext("2d");
@@ -75,6 +79,12 @@ function readFile(file) {
                 processFile(zip);
             });
     };
+}
+
+function goBack() {
+    var content = document.getElementById("content");
+    content.classList.add("flex");
+    document.getElementById("settings").style.display = "none";
 }
 
 Dropzone.options.myAwesomeDropzone = {

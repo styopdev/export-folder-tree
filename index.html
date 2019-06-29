@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Zip To Preview</title>
-    <style>
-
-    </style>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/dropzone.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
@@ -21,21 +19,91 @@
 
         </div><!--.sidebar-->
 
-        <div class="content">
+        <div id="content" class="content flex">
 
+            <div id="settings">
+                <div class="settings-nav inline">
+                    <a class="back cp">
+                        <img src="./img/left-512.png" alt="Go back" onclick="goBack()">
+                    </a>
+                    <span>Back</span>
+                </div>
+                <div class="settings-menu inline">
+                    <ul class="settings-menu bg-color">
+                        <li>
+                            <label for="set-bg-color" class="radio-btn-container inline">
+                                <input type="radio" id="set-bg-color" name="bg-color">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="settings-menu-item inline" for="set-bg-color">Background Color</label>
+                        </li>
+                        <li>
+                            <label for="set-fbg-color" class="radio-btn-container inline">
+                                <input type="radio" id="set-fbg-color" name="bg-color">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="settings-menu-item inline" for="set-fbg-color">Foreground Color</label>
+                        </li>
+                    </ul>
+                    <ul class="settings-menu styles">
+                        <li>
+                            <label class="checkbox-btn-container inline">
+                                <input type="checkbox" checked="checked">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="settings-menu-item inline" for="set-fbg-color">With Dashes</label>
+                        </li>
+                        <li>
+                            <label class="checkbox-btn-container inline">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="settings-menu-item inline">With Icons</label>
+                        </li>
+                    </ul>
+                    <ul class="settings-menu typograpgy">
+                        <li>
+
+                            <div class="select-wrapper inline">
+                                <select name="et-font-size" class="inline" id="et-font-size">
+                                    <option value="14">14px</option>
+                                    <option value="15">15px</option>
+                                    <option value="16">16px</option>
+                                </select>
+                                <i class="arrow-down"></i>
+                            </div>
+                            <label class="settings-menu-item inline">Font Size</label>
+                        </li>
+                        <li>
+
+                            <div class="select-wrapper inline">
+                                <select name="et-line-height" class="inline" id="et-line-height">
+                                    <option value="14">14px</option>
+                                    <option value="15">15px</option>
+                                    <option value="16">16px</option>
+                                </select>
+                                <span class="arrow-down"></span>
+                            </div>
+                            <label class="settings-menu-item inline">Line Height</label>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            
             <div id="zone">
                 <div id="options-box">
-                    <div class="mb-15">
-                        <span class="et-btn">Select File</span>
+                    <div class="mb-10">
+                        <span class="et-btn cp">Select File</span>
                     </div>
-                    <div class="mb-15">
-                        <span class="ttu db">OR</span>
+                    <div class="mb-10">
+                        <span class="ttu db fs-18 mb-7">OR</span>
                         <span class="db">Generate tree for github repository</span>
                     </div>
                     <label>
                         <div class="et-form">
                             <input id="github-url" class="et-btn-input" placeholder="Enter your github repository url..." type="text">
-                            <a id="generate" class="et-btn et-btn-submit" onclick="generateFromGithub()">Submit</a>
+                            <a id="generate" class="et-btn et-btn-submit cp" onclick="generateFromGithub()">Submit</a>
                         </div>
 
                     </label>
