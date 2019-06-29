@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon"/>
     <title>Zip To Preview</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/dropzone.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <script type="text/javascript" src="js/jscolor.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -20,27 +23,18 @@
         </div><!--.sidebar-->
 
         <div id="content" class="content flex">
-
             <div id="settings">
-                <div class="settings-nav inline">
-                    <a class="back cp">
-                        <img src="./img/left-512.png" alt="Go back" onclick="goBack()">
-                    </a>
-                    <span>Back</span>
-                </div>
-                <div class="settings-menu inline">
+                <div class="settings-menu">
                     <ul class="settings-menu bg-color">
                         <li>
-                            <label for="set-bg-color" class="radio-btn-container inline">
-                                <input type="radio" id="set-bg-color" name="bg-color">
-                                <span class="checkmark"></span>
+                            <label for="set-bg-color" class="inline">
+                                <input class="jscolor" value="ab2567">
                             </label>
                             <label class="settings-menu-item inline" for="set-bg-color">Background Color</label>
                         </li>
                         <li>
-                            <label for="set-fbg-color" class="radio-btn-container inline">
-                                <input type="radio" id="set-fbg-color" name="bg-color">
-                                <span class="checkmark"></span>
+                            <label for="set-fbg-color" class="inline">
+                                <input class="jscolor" value="ab2567">
                             </label>
                             <label class="settings-menu-item inline" for="set-fbg-color">Foreground Color</label>
                         </li>
@@ -66,6 +60,10 @@
 
                             <div class="select-wrapper inline">
                                 <select name="et-font-size" class="inline" id="et-font-size">
+                                    <option value="10">10px</option>
+                                    <option value="11">11px</option>
+                                    <option value="12">12px</option>
+                                    <option value="13">13px</option>
                                     <option value="14">14px</option>
                                     <option value="15">15px</option>
                                     <option value="16">16px</option>
@@ -78,6 +76,10 @@
 
                             <div class="select-wrapper inline">
                                 <select name="et-line-height" class="inline" id="et-line-height">
+                                    <option value="10">10px</option>
+                                    <option value="11">11px</option>
+                                    <option value="12">12px</option>
+                                    <option value="13">13px</option>
                                     <option value="14">14px</option>
                                     <option value="15">15px</option>
                                     <option value="16">16px</option>
@@ -89,6 +91,17 @@
                     </ul>
 
                 </div>
+
+                <div id="generated-tree">
+
+                </div>
+
+                <div class="settings-nav">
+                    <a class="back cp">
+                        <img src="./img/retry.png" alt="Go back" onclick="retry()">
+                    </a>
+                </div>
+
             </div>
             
             <div id="zone">

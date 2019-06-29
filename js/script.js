@@ -1,6 +1,12 @@
 var unzip = new JSZip();
 var reader = new FileReader();
 
+function retry() {
+    document.getElementById('zone').style.display = 'inline-block';
+    document.getElementById('tree-canvas').remove();
+    document.getElementById('settings').style.display = 'none';
+}
+
 function generateFromGithub() {
     var githubUrl = 'http://cors-anywhere.herokuapp.com/'; 
     githubUrl += document.getElementById('github-url').value;
@@ -44,7 +50,8 @@ function processFile(zip) {
     var canvasElement = document.createElement('canvas');
 
     canvasElement.setAttribute('id', 'tree-canvas');
-    document.getElementById('zone').replaceWith(canvasElement);
+    document.getElementById('generated-tree').appendChild(canvasElement);
+    document.getElementById('zone').style.display = 'none';
 
     var content = document.getElementById("content");
     content.classList.remove("flex");
