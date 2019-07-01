@@ -91,7 +91,7 @@ function drawTree() {
         context.beginPath();
         context.fillStyle = imageStyles.foreground;
         context.font =  imageStyles.fontSize + "px Arial, Helvetica, sans-serif";
-        context.fillText(filename.path, 25 + filename.nestLevel *  imageStyles.lineHeight, 32 * index + 30);
+        context.fillText(filename.path, 25 + filename.nestLevel * 25, imageStyles.lineHeight * index + 30);
     });
 }
 
