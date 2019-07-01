@@ -12,7 +12,7 @@ function retry() {
 }
 
 function generateFromGithub() {
-    var githubUrl = 'http://cors-anywhere.herokuapp.com/'; 
+    var githubUrl = 'https://cors-anywhere.herokuapp.com/'; 
     githubUrl += document.getElementById('github-url').value;
     githubUrl += '/archive/master.zip';
     // TODO add githubUrl validation;
@@ -90,12 +90,6 @@ function readFile(file) {
                 processFile(zip);
             });
     };
-}
-
-function goBack() {
-    var content = document.getElementById("content");
-    content.classList.add("flex");
-    document.getElementById("settings").style.display = "none";
 }
 
 Dropzone.options.myAwesomeDropzone = {
