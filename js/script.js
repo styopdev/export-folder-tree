@@ -1,5 +1,15 @@
 var unzip = new JSZip();
 var reader = new FileReader();
+var fileNamesTree;
+var canvasHeight;
+var imageStyles = {
+    background: '#000000',
+    foreground: '#00FA00',
+    dashes: false,
+    icons: false,
+    fontSize: 16,
+    lineHeight: 16
+};
 
 function openSelectFile() {
     document.getElementById('my-awesome-dropzone').click();
@@ -48,9 +58,9 @@ function toTree(filesList) {
 
 function processFile(zip) {
     var fileNames = Object.keys(zip.files);
-    var fileNamesTree = toTree(fileNames);
+    fileNamesTree = toTree(fileNames);
 
-    var height = fileNames.length * 30 + 50;
+    canvasHeight = fileNames.length * 30 + 50;
     var canvasElement = document.createElement('canvas');
 
     canvasElement.setAttribute('id', 'tree-canvas');
@@ -61,23 +71,32 @@ function processFile(zip) {
     content.classList.remove("flex");
     document.getElementById("settings").style.display = "block";
 
+    drawTree();
+}
+
+function drawTree() {
     var canvas = document.getElementById('tree-canvas');
     canvas.width = 582;
-    canvas.height = height;
+    canvas.height = canvasHeight;
 
     var context = canvas.getContext("2d");
     context.imageSmoothingEnabled = true;
     context.webkitImageSmoothingEnabled = true;
     context.mozImageSmoothingEnabled = true;
 
-    context.fillRect(0, 0, canvas.width, height);
+    context.fillStyle = imageStyles.background;
+    context.fillRect(0, 0, canvas.width, canvasHeight);
 
     fileNamesTree.forEach(function (filename, index) {
         context.beginPath();
-        context.fillStyle = "#00FA00";
-        context.font = "20px Arial, Helvetica, sans-serif";
-        context.fillText(filename.path, 25 + filename.nestLevel *  20, 32 * index + 30);
+        context.fillStyle = imageStyles.foreground;
+        context.font =  imageStyles.fontSize + "px Arial, Helvetica, sans-serif";
+        context.fillText(filename.path, 25 + filename.nestLevel *  imageStyles.lineHeight, 32 * index + 30);
     });
+}
+
+function changeSetting(key, value) {
+    imageStyles[key] = value;
 }
 
 function readFile(file) {
