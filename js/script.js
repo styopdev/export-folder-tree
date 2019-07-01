@@ -1,6 +1,10 @@
 var unzip = new JSZip();
 var reader = new FileReader();
 
+function openSelectFile() {
+    document.getElementById('my-awesome-dropzone').click();
+}
+
 function retry() {
     document.getElementById('zone').style.display = 'inline-block';
     document.getElementById('tree-canvas').remove();
