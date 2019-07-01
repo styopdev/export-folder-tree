@@ -28,13 +28,13 @@
                     <ul class="settings-menu bg-color">
                         <li>
                             <label for="set-bg-color" class="inline">
-                                <input class="jscolor" value="ab2567">
+                                <input class="jscolor" onchange="changeSetting('background', '#' + this.value)" value="ab2567">
                             </label>
                             <label class="settings-menu-item inline" for="set-bg-color">Background Color</label>
                         </li>
                         <li>
                             <label for="set-fbg-color" class="inline">
-                                <input class="jscolor" value="ab2567">
+                                <input class="jscolor" onchange="changeSetting('foreground', '#' + this.value)" value="ab2567">
                             </label>
                             <label class="settings-menu-item inline" for="set-fbg-color">Foreground Color</label>
                         </li>
@@ -42,14 +42,14 @@
                     <ul class="settings-menu styles">
                         <li>
                             <label class="checkbox-btn-container inline">
-                                <input type="checkbox" checked="checked">
+                                <input type="checkbox" onchange="changeSetting('withDashes', this.value)" checked="checked">
                                 <span class="checkmark"></span>
                             </label>
                             <label class="settings-menu-item inline" for="set-fbg-color">With Dashes</label>
                         </li>
                         <li>
                             <label class="checkbox-btn-container inline">
-                                <input type="checkbox">
+                                <input type="checkbox" onchange="changeSetting('withIcons', this.value)">
                                 <span class="checkmark"></span>
                             </label>
                             <label class="settings-menu-item inline">With Icons</label>
@@ -59,7 +59,7 @@
                         <li>
 
                             <div class="select-wrapper inline">
-                                <select name="et-font-size" class="inline" id="et-font-size">
+                                <select onchange="changeSetting('fontSize', this.value)" name="et-font-size" class="inline" id="et-font-size">
                                     <option value="10">10px</option>
                                     <option value="11">11px</option>
                                     <option value="12">12px</option>
@@ -77,7 +77,7 @@
                         <li>
 
                             <div class="select-wrapper inline">
-                                <select name="et-line-height" class="inline" id="et-line-height">
+                                <select onchange="changeSetting('lineHeight', this.value)" name="et-line-height" class="inline" id="et-line-height">
                                     <option value="10">10px</option>
                                     <option value="11">11px</option>
                                     <option value="12">12px</option>

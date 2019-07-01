@@ -5,8 +5,8 @@ var canvasHeight;
 var imageStyles = {
     background: '#000000',
     foreground: '#00FA00',
-    dashes: false,
-    icons: false,
+    withDashes: false,
+    withIcons: false,
     fontSize: 16,
     lineHeight: 16
 };
@@ -96,7 +96,14 @@ function drawTree() {
 }
 
 function changeSetting(key, value) {
+    if (value === 'on') {
+        value = true;
+    } else if (value === 'off') {
+        value = false;
+    }
+
     imageStyles[key] = value;
+    drawTree();
 }
 
 function readFile(file) {
