@@ -22,19 +22,23 @@
 
         </div><!--.sidebar-->
 
+        <div class="warning">
+            Dont worry we dont upload your files on our servers, everything will be done on your own computer.
+        </div>
+
         <div id="content" class="content flex">
             <div id="settings">
                 <div class="settings-menu">
                     <ul class="settings-menu bg-color">
                         <li>
                             <label for="set-bg-color" class="inline">
-                                <input class="jscolor" onchange="changeSetting('background', '#' + this.value)" value="ab2567">
+                                <input class="jscolor" onchange="changeSetting('background', '#' + this.value)" value="000000">
                             </label>
                             <label class="settings-menu-item inline" for="set-bg-color">Background Color</label>
                         </li>
                         <li>
                             <label for="set-fbg-color" class="inline">
-                                <input class="jscolor" onchange="changeSetting('foreground', '#' + this.value)" value="ab2567">
+                                <input class="jscolor" onchange="changeSetting('foreground', '#' + this.value)" value="00FA00">
                             </label>
                             <label class="settings-menu-item inline" for="set-fbg-color">Foreground Color</label>
                         </li>
@@ -42,17 +46,17 @@
                     <ul class="settings-menu styles">
                         <li>
                             <label class="checkbox-btn-container inline">
-                                <input type="checkbox" onchange="changeSetting('withDashes', this.value)" checked="checked">
+                                <input name="with-dashes" type="checkbox" onchange="changeSetting('withDashes', this.checked)" checked="checked">
                                 <span class="checkmark"></span>
                             </label>
                             <label class="settings-menu-item inline" for="set-fbg-color">With Dashes</label>
                         </li>
                         <li>
                             <label class="checkbox-btn-container inline">
-                                <input type="checkbox" onchange="changeSetting('withIcons', this.value)">
+                                <input name="with-icons" type="checkbox" onchange="changeSetting('withSizes', this.checked)" checked="checked">
                                 <span class="checkmark"></span>
                             </label>
-                            <label class="settings-menu-item inline">With Icons</label>
+                            <label class="settings-menu-item inline">With Sizes</label>
                         </li>
                     </ul>
                     <ul class="settings-menu typograpgy">
@@ -60,8 +64,6 @@
 
                             <div class="select-wrapper inline">
                                 <select onchange="changeSetting('fontSize', this.value)" name="et-font-size" class="inline" id="et-font-size">
-                                    <option value="10">10px</option>
-                                    <option value="11">11px</option>
                                     <option value="12">12px</option>
                                     <option value="13">13px</option>
                                     <option value="14">14px</option>
@@ -78,7 +80,6 @@
 
                             <div class="select-wrapper inline">
                                 <select onchange="changeSetting('lineHeight', this.value)" name="et-line-height" class="inline" id="et-line-height">
-                                    <option value="10">10px</option>
                                     <option value="12">12px</option>
                                     <option value="14">14px</option>
                                     <option value="16">16px</option>
@@ -132,7 +133,7 @@
                       id="my-awesome-dropzone"></form>
             </div>
 
-        </div><!--.content-->
+        </div>
 
     </div>
     <script src="js/dropzone.js"></script>

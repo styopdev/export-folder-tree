@@ -56,7 +56,7 @@ body{
 .content.flex{
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding-top: 50px;
 }
 canvas{
     display: inline-block;
@@ -423,4 +423,10 @@ select:not([multiple]) {
 #tree-canvas {
     margin: 20px auto;
     display: block;
+}
+
+.warning {
+    display: block;
+    text-align: center;
+    padding: 30px;
 }
