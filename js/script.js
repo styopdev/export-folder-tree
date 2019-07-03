@@ -124,7 +124,8 @@ function drawTree() {
         context.fillText(fileName, leftShift, topShift);
 
     });
-    context.fillText(watermarkText, canvas.width - 230, canvasHeight - 15);
+    context.font =  "12px Arial, Helvetica, sans-serif";
+    context.fillText(watermarkText, canvas.width - 180, canvasHeight - 15);
 }
 
 function changeSetting(key, value) {
