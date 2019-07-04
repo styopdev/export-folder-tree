@@ -158,6 +158,7 @@ Dropzone.options.myAwesomeDropzone = {
         if (file.name.endsWith(".zip")) {
             done();
             readFile(file);
+            this.removeFile(file);
             return;
         } else {
             done("Only .zip files accepted.");
