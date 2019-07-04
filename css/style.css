@@ -428,5 +428,5 @@ select:not([multiple]) {
 .warning {
     display: block;
     text-align: center;
-    padding: 30px;
+    padding: 25px;
 }
