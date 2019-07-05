@@ -91,8 +91,6 @@ function drawTree() {
     context.fillStyle = imageStyles.background;
     context.fillRect(0, 0, canvas.width, canvasHeight);
 
-    console.log('imageStyles', imageStyles);
-
     fileNamesTree.forEach(function (file, index) {
         context.beginPath();
         context.fillStyle = imageStyles.foreground;
@@ -122,8 +120,8 @@ function drawTree() {
         }
 
         context.fillText(fileName, leftShift, topShift);
-
     });
+
     context.font =  "12px Arial, Helvetica, sans-serif";
     context.fillText(watermarkText, canvas.width - 180, canvasHeight - 15);
 }
