@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="css/dropzone.css">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
+        <meta name="twitter:image" content="https://farm6.staticflickr.com/5510/14338202952_93595258ff_z.jpg" />
     </head>
     <body>
         <div class="wrapper">
@@ -19,13 +20,27 @@
                 </div>
             </div>
 
-            <div class="warning">
-                Dont worry we dont upload your files to our servers, everything will be done on your own computer.
-            </div>
             
             <div id="content" class="content flex">
+
+                <div class="warning">
+                    Dont worry we dont upload your files to our servers, everything will be done on your own computer.
+                    <div class="social-nav">
+                        <a class="github-button" href="https://github.com/ntkme/github-buttons" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
+
+                        <a class="twitter-share-button"
+                           href="https://twitter.com/intent/tweet"
+                           data-size="large"
+                           data-text="Generate your folder's tree based on uploaded zip or github repository"
+                           data-url="http://foldertotree.cc/"
+                           data-hashtags="folder, tree, github"
+                           data-via="twitterdev"
+                           data-related="twitterapi,twitter">
+                        </a>
+                    </div>
+                </div>
                 <div id="settings">
-                    <div class="settings-menu">
+                    <div class="settings-menu-box">
                         <ul class="settings-menu bg-color">
                             <li>
                                 <label for="set-bg-color" class="inline">
@@ -58,7 +73,7 @@
                         </ul>
                         <ul class="settings-menu typograpgy">
                             <li>
-                                <div class="select-wrapper inline">
+                                <div class="select-wrapper inline mr-12">
                                     <select onchange="changeSetting('fontSize', this.value)" name="et-font-size" class="inline" id="et-font-size">
                                         <option value="12">12px</option>
                                         <option value="13">13px</option>
@@ -73,7 +88,7 @@
                                 <label class="settings-menu-item inline">Font Size</label>
                             </li>
                             <li>
-                                <div class="select-wrapper inline">
+                                <div class="select-wrapper inline mr-12">
                                     <select onchange="changeSetting('lineHeight', this.value)" name="et-line-height" class="inline" id="et-line-height">
                                         <option value="12">12px</option>
                                         <option value="14">14px</option>
@@ -93,13 +108,14 @@
                         </ul>
                     </div>
 
-                    <div id="generated-tree"></div>
-
-                    <div class="settings-nav">
-                        <a class="back cp">
-                            <img src="./img/retry.png" alt="Go back" onclick="retry()">
+                    <div id="generated-tree" class="generated-tree">
+                        <a class="back cp" title="Try again">
+                            <div class="back-bg"></div>
+                            <img src="./img/reload.png" class="back-image" alt="Go back" onclick="retry()">
                         </a>
                     </div>
+
+
                 </div>
                 
                 <div id="zone">
@@ -132,5 +148,23 @@
         <script type="text/javascript" src="js/jszip.js"></script>
         <script type="text/javascript" src="js/jszip-utils.min.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        Stepan Vardanyan, [05.07.19 16:24]
+        <script>window.twttr = (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+
+            t._e = [];
+            t.ready = function(f) {
+                t._e.push(f);
+            };
+
+            return t;
+        }(document, "script", "twitter-wjs"));</script>
     </body>
 </html>

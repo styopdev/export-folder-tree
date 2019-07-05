@@ -21,6 +21,8 @@ function retry() {
     document.getElementById('zone').style.display = 'inline-block';
     document.getElementById('tree-canvas').remove();
     document.getElementById('settings').style.display = 'none';
+    var content = document.getElementById("content");
+    content.classList.add("flex");
 }
 
 function generateFromGithub() {
