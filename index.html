@@ -1,144 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="img/favicon.png" type="image/x-icon"/>
-    <title>Generate your folder's tree based on uploaded zip or github repository</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/dropzone.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="img/favicon.png" type="image/x-icon"/>
+        <title>Generate your folder's tree based on uploaded zip or github repository</title>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/dropzone.css">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
 
-    <script type="text/javascript" src="js/jscolor.js"></script>
-</head>
-<body>
-    <div class="wrapper">
-        <div class="sidebar">
-            <div class="logo-wrapper">
-                <a href="#">
-                    <img src="img/logo_200x200.png" alt="logo">
-                </a>
-            </div>
-
-        </div><!--.sidebar-->
-
-        <div class="warning">
-            Dont worry we dont upload your files to our servers, everything will be done on your own computer.
-        </div>
-
-        <div id="content" class="content flex">
-            <div id="settings">
-                <div class="settings-menu">
-                    <ul class="settings-menu bg-color">
-                        <li>
-                            <label for="set-bg-color" class="inline">
-                                <input class="jscolor" onchange="changeSetting('background', '#' + this.value)" value="000000">
-                            </label>
-                            <label class="settings-menu-item inline" for="set-bg-color">Background Color</label>
-                        </li>
-                        <li>
-                            <label for="set-fbg-color" class="inline">
-                                <input class="jscolor" onchange="changeSetting('foreground', '#' + this.value)" value="00FA00">
-                            </label>
-                            <label class="settings-menu-item inline" for="set-fbg-color">Foreground Color</label>
-                        </li>
-                    </ul>
-                    <ul class="settings-menu styles">
-                        <li>
-                            <label class="checkbox-btn-container inline">
-                                <input name="with-dashes" type="checkbox" onchange="changeSetting('withDashes', this.checked)" checked="checked">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="settings-menu-item inline" for="set-fbg-color">With Dashes</label>
-                        </li>
-                        <li>
-                            <label class="checkbox-btn-container inline">
-                                <input name="with-icons" type="checkbox" onchange="changeSetting('withSizes', this.checked)" checked="checked">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="settings-menu-item inline">With Sizes</label>
-                        </li>
-                    </ul>
-                    <ul class="settings-menu typograpgy">
-                        <li>
-
-                            <div class="select-wrapper inline">
-                                <select onchange="changeSetting('fontSize', this.value)" name="et-font-size" class="inline" id="et-font-size">
-                                    <option value="12">12px</option>
-                                    <option value="13">13px</option>
-                                    <option value="14">14px</option>
-                                    <option value="15">15px</option>
-                                    <option value="16" selected>16px</option>
-                                    <option value="17">17px</option>
-                                    <option value="18">18px</option>
-                                </select>
-                                <i class="arrow-down"></i>
-                            </div>
-                            <label class="settings-menu-item inline">Font Size</label>
-                        </li>
-                        <li>
-
-                            <div class="select-wrapper inline">
-                                <select onchange="changeSetting('lineHeight', this.value)" name="et-line-height" class="inline" id="et-line-height">
-                                    <option value="12">12px</option>
-                                    <option value="14">14px</option>
-                                    <option value="16">16px</option>
-                                    <option value="18">18px</option>
-                                    <option value="20">20px</option>
-                                    <option value="22" selected>22px</option>
-                                    <option value="24">24px</option>
-                                    <option value="26">26px</option>
-                                    <option value="28">28px</option>
-                                    <option value="30">30px</option>
-                                </select>
-                                <span class="arrow-down"></span>
-                            </div>
-                            <label class="settings-menu-item inline">Line Height</label>
-                        </li>
-                    </ul>
-
-                </div>
-
-                <div id="generated-tree">
-
-                </div>
-
-                <div class="settings-nav">
-                    <a class="back cp">
-                        <img src="./img/retry.png" alt="Go back" onclick="retry()">
+        <script type="text/javascript" src="js/jscolor.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="sidebar">
+                <div class="logo-wrapper">
+                    <a href="#">
+                        <img src="img/logo_200x200.png" alt="logo">
                     </a>
                 </div>
 
-            </div>
-            
-            <div id="zone">
-                <div id="options-box">
-                    <div class="mb-10">
-                        <span onclick="openSelectFile()" class="et-btn cp">Select File</span>
-                    </div>
-                    <div class="mb-10">
-                        <span class="ttu db fs-18 mb-7">OR</span>
-                        <span class="db">Generate tree for github repository</span>
-                    </div>
-                    <label>
-                        <div class="et-form">
-                            <input id="github-url" class="et-btn-input" placeholder="Enter your github repository url..." type="text">
-                            <a id="generate" class="et-btn et-btn-submit cp" onclick="generateFromGithub()">Submit</a>
-                        </div>
+            </div><!--.sidebar-->
 
-                    </label>
+            <div class="warning">
+                Dont worry we dont upload your files to our servers, everything will be done on your own computer.
+            </div>
+
+            <div id="content" class="content flex">
+                <div id="settings">
+                    <div class="settings-menu">
+                        <ul class="settings-menu bg-color">
+                            <li>
+                                <label for="set-bg-color" class="inline">
+                                    <input class="jscolor" onchange="changeSetting('background', '#' + this.value)" value="000000">
+                                </label>
+                                <label class="settings-menu-item inline" for="set-bg-color">Background Color</label>
+                            </li>
+                            <li>
+                                <label for="set-fbg-color" class="inline">
+                                    <input class="jscolor" onchange="changeSetting('foreground', '#' + this.value)" value="00FA00">
+                                </label>
+                                <label class="settings-menu-item inline" for="set-fbg-color">Foreground Color</label>
+                            </li>
+                        </ul>
+                        <ul class="settings-menu styles">
+                            <li>
+                                <label class="checkbox-btn-container inline">
+                                    <input name="with-dashes" type="checkbox" onchange="changeSetting('withDashes', this.checked)" checked="checked">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="settings-menu-item inline" for="set-fbg-color">With Dashes</label>
+                            </li>
+                            <li>
+                                <label class="checkbox-btn-container inline">
+                                    <input name="with-icons" type="checkbox" onchange="changeSetting('withSizes', this.checked)" checked="checked">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="settings-menu-item inline">With Sizes</label>
+                            </li>
+                        </ul>
+                        <ul class="settings-menu typograpgy">
+                            <li>
+
+                                <div class="select-wrapper inline">
+                                    <select onchange="changeSetting('fontSize', this.value)" name="et-font-size" class="inline" id="et-font-size">
+                                        <option value="12">12px</option>
+                                        <option value="13">13px</option>
+                                        <option value="14">14px</option>
+                                        <option value="15">15px</option>
+                                        <option value="16" selected>16px</option>
+                                        <option value="17">17px</option>
+                                        <option value="18">18px</option>
+                                    </select>
+                                    <i class="arrow-down"></i>
+                                </div>
+                                <label class="settings-menu-item inline">Font Size</label>
+                            </li>
+                            <li>
+
+                                <div class="select-wrapper inline">
+                                    <select onchange="changeSetting('lineHeight', this.value)" name="et-line-height" class="inline" id="et-line-height">
+                                        <option value="12">12px</option>
+                                        <option value="14">14px</option>
+                                        <option value="16">16px</option>
+                                        <option value="18">18px</option>
+                                        <option value="20">20px</option>
+                                        <option value="22" selected>22px</option>
+                                        <option value="24">24px</option>
+                                        <option value="26">26px</option>
+                                        <option value="28">28px</option>
+                                        <option value="30">30px</option>
+                                    </select>
+                                    <span class="arrow-down"></span>
+                                </div>
+                                <label class="settings-menu-item inline">Line Height</label>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div id="generated-tree">
+
+                    </div>
+
+                    <div class="settings-nav">
+                        <a class="back cp">
+                            <img src="./img/retry.png" alt="Go back" onclick="retry()">
+                        </a>
+                    </div>
+
                 </div>
-                <form action="/file-upload"
-                      class="dropzone"
-                      id="my-awesome-dropzone"></form>
+                
+                <div id="zone">
+                    <div id="options-box">
+                        <div class="mb-10">
+                            <span onclick="openSelectFile()" class="et-btn cp">Select File</span>
+                        </div>
+                        <div class="mb-10">
+                            <span class="ttu db fs-18 mb-7">OR</span>
+                            <span class="db">Generate tree for github repository</span>
+                        </div>
+                        <label>
+                            <div class="et-form">
+                                <input id="github-url" class="et-btn-input" placeholder="Enter your github repository url..." type="text">
+                                <a id="generate" class="et-btn et-btn-submit cp" onclick="generateFromGithub()">Submit</a>
+                            </div>
+
+                        </label>
+                    </div>
+                    <form action="/file-upload"
+                        class="dropzone"
+                        id="my-awesome-dropzone"></form>
+                </div>
+
             </div>
 
         </div>
-
-    </div>
-    <script src="js/dropzone.js"></script>
-    <script src="js/jszip.js"></script>
-    <script src="js/jszip-utils.min.js"></script>
-    <script src="js/script.js"></script>
-</body>
+        <script src="js/dropzone.js"></script>
+        <script src="js/jszip.js"></script>
+        <script src="js/jszip-utils.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
 </html>
