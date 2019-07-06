@@ -17,6 +17,12 @@ function openSelectFile() {
     document.getElementById('my-awesome-dropzone').click();
 }
 
+function download() {
+    var canvas = document.getElementById('tree-canvas');
+    var imageData = canvas.toDataURL();
+    window.location.href = imageData.replace("image/png", "image/octet-stream");
+}
+
 function retry() {
     document.getElementById('zone').style.display = 'inline-block';
     document.getElementById('tree-canvas').remove();
