@@ -495,7 +495,6 @@ select:not([multiple]) {
     justify-content: space-between;
     align-items: center;
     padding: 25px;
-    padding-left: 100px;
     position: absolute;
     top: 0;
     left: 0;
@@ -529,4 +528,7 @@ select:not([multiple]) {
     padding: 10px 15px;
     margin: 0 auto;
     margin-top: 100px;
+}
+.lb {
+    display: block;
 }
