@@ -495,6 +495,7 @@ select:not([multiple]) {
     justify-content: space-between;
     align-items: center;
     padding: 25px;
+    padding-left: 100px;
     position: absolute;
     top: 0;
     left: 0;
@@ -514,8 +515,18 @@ select:not([multiple]) {
     border: 3px solid #000000;
     font-size: 15px;
 }
-
 .download-button:hover {
     background-color: #000000;
     color: #ffffff;
+}
+.description {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+    width: 240px;
+    padding: 10px 15px;
+    margin: 0 auto;
+    margin-top: 100px;
 }
