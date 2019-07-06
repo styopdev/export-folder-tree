@@ -503,7 +503,7 @@ select:not([multiple]) {
 }
 .social-nav {
     position: absolute;
-    top: 20px;
+    top: 15px;
     right: 10px;
 }
 .download-button {
