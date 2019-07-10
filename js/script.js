@@ -50,11 +50,33 @@ function generateFromGithub() {
     });
 }
 
+function isRoot(fileName) {
+    return fileName.slice(-1) === '/' && fileName.split('/').length === 2;
+}
+
 function toTree(fileNameList, files) {
     var tree = [];
+    /* Sort files and folders by pushing files to the end of list */
+    fileNameList.sort((prev, next) => {
+        var prevSlashesLength = prev.match(/\//ig);
+        var nextSlashesLength = next.match(/\//ig);
+
+        if (isRoot(prev) || isRoot(next)) {
+            return 0;
+        }
+
+        if (prevSlashesLength < nextSlashesLength) {
+            return 1;
+        }
+        if (prevSlashesLength > nextSlashesLength) {
+            return -1;
+        }
+
+        return 0;
+    });
 
     fileNameList.forEach(file => {
-        var isFolder = file.endsWith('/');  //Might be useful later
+        var isFolder = file.endsWith('/');
         var filePaths = file.split('/').filter(path => !!path);
 
         tree.push({
