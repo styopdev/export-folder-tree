@@ -507,7 +507,7 @@ select:not([multiple]) {
     right: 10px;
 }
 .download-button {
-    margin-top: 20px;
+    margin-top: 15px;
     padding: 7px 30px;
     color: #000000;
     border: 3px solid #000000;
@@ -530,4 +530,31 @@ select:not([multiple]) {
 }
 .lb {
     display: block;
+}
+.watermark-row {
+    width: 582px;
+    margin: 15px auto 0;
+    text-align: left;
+}
+.watermark-row .checkbox-btn-container {
+    margin-right: 0;
+}
+.watermark-row .checkmark, .watermark-row .checkbox-btn-container {
+    height: 16px;
+    width: 16px;
+}
+.watermark-row .checkbox-btn-container .checkmark:after {
+    left: 5px;
+    top: 3px;
+    width: 3px;
+    height: 6px;
+}
+.no-select {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
 }

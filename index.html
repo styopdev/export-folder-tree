@@ -52,7 +52,7 @@
                         </a>
                     </div>
                 </div>
-                <div id="settings">
+                <div id="settings" class="no-select">
                     <div class="settings-menu-box">
                         <ul class="settings-menu bg-color">
                             <li>
@@ -71,17 +71,17 @@
                         <ul class="settings-menu styles">
                             <li>
                                 <label class="checkbox-btn-container inline">
-                                    <input name="with-dashes" type="checkbox" onchange="changeSetting('withDashes', this.checked)" checked="checked">
+                                    <input id="with-dashes" name="with-dashes" type="checkbox" onchange="changeSetting('withDashes', this.checked)" checked="checked">
                                     <span class="checkmark"></span>
                                 </label>
-                                <label class="settings-menu-item inline" for="set-fbg-color">With Dashes</label>
+                                <label for="with-dashes" class="settings-menu-item inline">With Dashes</label>
                             </li>
                             <li>
                                 <label class="checkbox-btn-container inline">
-                                    <input name="with-icons" type="checkbox" onchange="changeSetting('withSizes', this.checked)" checked="checked">
+                                    <input id="with-sizes" name="with-icons" type="checkbox" onchange="changeSetting('withSizes', this.checked)" checked="checked">
                                     <span class="checkmark"></span>
                                 </label>
-                                <label class="settings-menu-item inline">With Sizes</label>
+                                <label for="with-sizes" class="settings-menu-item inline">With Sizes</label>
                             </li>
                         </ul>
                         <ul class="settings-menu typograpgy">
@@ -127,7 +127,14 @@
                             <img src="./img/reload.png" class="back-image" alt="Go back" onclick="retry()">
                         </a>
                     </div>
-                    
+                    <div class="watermark-row">
+                        <label class="checkbox-btn-container inline">
+                            <input id="no-watermark" name="with-watermark" type="checkbox" onchange="changeSetting('watermarkEnabled', !this.checked)">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="no-watermark" class="settings-menu-item inline">No watermark please ;)</label>
+                    </div>
+
                     <button onclick="download()" class="button download-button">Download</button>
 
                 </div>
