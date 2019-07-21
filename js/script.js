@@ -57,7 +57,7 @@ function isRoot(fileName) {
 
 function toTree(fileNameList, files) {
     var tree = [];
-    /* Sort files and folders by pushing files to the end of list */
+    /* Sort files and folders by pushing files to the end of the list */
     fileNameList.sort((prev, next) => {
         var prevSlashesLength = prev.match(/\//ig);
         var nextSlashesLength = next.match(/\//ig);
