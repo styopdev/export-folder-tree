@@ -192,6 +192,7 @@ canvas{
     top: 0;
     right: 0;
     height: 34px;
+    line-height: 21px;
 }
 .db{
     display: block;
