@@ -126,7 +126,6 @@ canvas{
     margin-bottom: 0;
 }
 
-
 #settings{
     display: none;
     padding-top: 80px;
@@ -637,7 +636,6 @@ select:not([multiple]) {
     }
 }
 
-
 @media only screen and (max-width: 640px) {
 
     .logo-wrapper-mobile {
@@ -675,7 +673,6 @@ select:not([multiple]) {
     #zone .dropzone.dz-clickable{
         display: none;
     }
-
     .settings-menu-box {
         width: 100%;
         display: block;
