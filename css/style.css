@@ -485,7 +485,16 @@ select:not([multiple]) {
     border-radius: 0;
     outline: none;
 }
-
+#sandwich-btn{
+    display: none;
+    width: 30px;
+}
+#sandwich-btn > span{
+    display: block;
+    height: 4px;
+    background-color: #2E404E;
+    margin-bottom: 4px;
+}
 #tree-canvas {
     margin: 0px auto;
     display: block;
@@ -501,6 +510,10 @@ select:not([multiple]) {
     right: 0;
     height: 30px;
     background: #ffffff;
+}
+.warning-message-top{
+    margin: 0 auto;
+    line-height: 20px;
 }
 .social-nav {
     position: absolute;
@@ -558,4 +571,19 @@ select:not([multiple]) {
           -ms-user-select: none; /* Internet Explorer/Edge */
               user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome and Opera */
+}
+
+@media only screen and (max-width: 992px) {
+    #sandwich-btn{
+        display: block;
+    }
+    .sidebar {
+        position: fixed;
+        width: 320px;
+        z-index: 999;
+    }
+    .content {
+        width: 100%;
+        margin-left: 0;
+    }
 }
