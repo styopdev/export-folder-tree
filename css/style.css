@@ -581,9 +581,14 @@ select:not([multiple]) {
         position: fixed;
         width: 320px;
         z-index: 999;
+        display: none;
     }
     .content {
         width: 100%;
         margin-left: 0;
     }
+}
+
+@media only screen and (max-width: 768px) {
+
 }

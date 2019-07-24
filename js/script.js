@@ -181,6 +181,10 @@ function readFile(file) {
     };
 }
 
+function toggleSidebar() {
+    console.log('toggleSidebar')
+}
+
 Dropzone.options.myAwesomeDropzone = {
     paramName: "file",
     maxFiles: 1,
