@@ -14,9 +14,15 @@
         <div class="wrapper">
             <div class="sidebar">
                 <div class="logo-wrapper">
-                    <a href="#">
-                        <img src="img/logo_200x200.png" alt="logo">
+                    <a href="">
+                        <img src="img/logo_200x200.jpg" alt="logo">
                     </a>
+                </div>
+
+                <div class="description">
+                    <p>
+                        Upload your zip or use any public github repository to generate your files' tree preview image.
+                    </p>
                 </div>
             </div>
 
@@ -24,9 +30,16 @@
             <div id="content" class="content flex">
 
                 <div class="warning">
-                    Dont worry we dont upload your files to our servers, everything will be done on your own computer.
+                    <span style="margin: 0 auto; line-height: 20px;">
+                        <span class="lb">
+                            Dont worry we dont upload your files to our servers, 
+                        </span>
+                        <span class="lb">
+                            everything will be done on your own computer.
+                        </span> 
+                    </span>
                     <div class="social-nav">
-                        <a class="github-button" href="https://github.com/ntkme/github-buttons" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
+                        <a class="github-button" href="https://github.com/styopdev/folder-to-tree" data-size="large" data-show-count="true" aria-label="Star styopdev/folder-to-tree on GitHub">Star</a>
 
                         <a class="twitter-share-button"
                            href="https://twitter.com/intent/tweet"
@@ -39,7 +52,7 @@
                         </a>
                     </div>
                 </div>
-                <div id="settings">
+                <div id="settings" class="no-select">
                     <div class="settings-menu-box">
                         <ul class="settings-menu bg-color">
                             <li>
@@ -58,17 +71,17 @@
                         <ul class="settings-menu styles">
                             <li>
                                 <label class="checkbox-btn-container inline">
-                                    <input name="with-dashes" type="checkbox" onchange="changeSetting('withDashes', this.checked)" checked="checked">
+                                    <input id="with-dashes" name="with-dashes" type="checkbox" onchange="changeSetting('withDashes', this.checked)" checked="checked">
                                     <span class="checkmark"></span>
                                 </label>
-                                <label class="settings-menu-item inline" for="set-fbg-color">With Dashes</label>
+                                <label for="with-dashes" class="settings-menu-item inline">With Dashes</label>
                             </li>
                             <li>
                                 <label class="checkbox-btn-container inline">
-                                    <input name="with-icons" type="checkbox" onchange="changeSetting('withSizes', this.checked)" checked="checked">
+                                    <input id="with-sizes" name="with-icons" type="checkbox" onchange="changeSetting('withSizes', this.checked)" checked="checked">
                                     <span class="checkmark"></span>
                                 </label>
-                                <label class="settings-menu-item inline">With Sizes</label>
+                                <label for="with-sizes" class="settings-menu-item inline">With Sizes</label>
                             </li>
                         </ul>
                         <ul class="settings-menu typograpgy">
@@ -114,7 +127,15 @@
                             <img src="./img/reload.png" class="back-image" alt="Go back" onclick="retry()">
                         </a>
                     </div>
+                    <div class="watermark-row">
+                        <label class="checkbox-btn-container inline">
+                            <input id="no-watermark" name="with-watermark" type="checkbox" onchange="changeSetting('watermarkEnabled', !this.checked)">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="no-watermark" class="settings-menu-item inline">No watermark please ;)</label>
+                    </div>
 
+                    <button onclick="download()" class="button download-button">Download</button>
 
                 </div>
                 
@@ -149,7 +170,7 @@
         <script type="text/javascript" src="js/jszip-utils.min.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
-        Stepan Vardanyan, [05.07.19 16:24]
+
         <script>window.twttr = (function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0],
                 t = window.twttr || {};
@@ -166,5 +187,16 @@
 
             return t;
         }(document, "script", "twitter-wjs"));</script>
+
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45124943-4"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-45124943-4');
+        </script>
     </body>
 </html>

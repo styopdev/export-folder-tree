@@ -112,7 +112,7 @@ canvas{
 
 #settings{
     display: none;
-    padding-top: 60px;
+    padding-top: 80px;
     padding-bottom: 80px;
 }
 
@@ -145,7 +145,7 @@ canvas{
     position: relative;
 }
 .et-btn{
-    background: #FE694E;
+    background: #fb4525;
     color: white;
     display: inline-block;
     font-weight: 400;
@@ -164,7 +164,7 @@ canvas{
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 .et-btn:hover{
-    background: #d83e22;
+    background: #fb4525;
 }
 .et-btn-input {
     display: block;
@@ -192,6 +192,7 @@ canvas{
     top: 0;
     right: 0;
     height: 34px;
+    line-height: 21px;
 }
 .db{
     display: block;
@@ -255,7 +256,7 @@ canvas{
 .generated-tree{
     position: relative;
     width: 582px;
-    margin: 10px auto auto auto;
+    margin: 20px auto auto auto;
 }
 
 .settings-menu-box{
@@ -489,12 +490,11 @@ select:not([multiple]) {
     margin: 0px auto;
     display: block;
 }
-
 .warning {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 25px;
+    padding: 30px;
     position: absolute;
     top: 0;
     left: 0;
@@ -503,6 +503,59 @@ select:not([multiple]) {
     background: #ffffff;
 }
 .social-nav {
-    float: right;
-    margin: 0px 5px 0 5px;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+}
+.download-button {
+    margin-top: 15px;
+    padding: 7px 30px;
+    color: #000000;
+    border: 3px solid #000000;
+    font-size: 15px;
+}
+.download-button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+.description {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+    width: 240px;
+    padding: 10px 15px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+.lb {
+    display: block;
+}
+.watermark-row {
+    width: 582px;
+    margin: 15px auto 0;
+    text-align: left;
+}
+.watermark-row .checkbox-btn-container {
+    margin-right: 0;
+}
+.watermark-row .checkmark, .watermark-row .checkbox-btn-container {
+    height: 16px;
+    width: 16px;
+}
+.watermark-row .checkbox-btn-container .checkmark:after {
+    left: 5px;
+    top: 3px;
+    width: 3px;
+    height: 6px;
+}
+.no-select {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
 }
