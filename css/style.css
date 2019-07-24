@@ -492,7 +492,6 @@ select:not([multiple]) {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
-
 .jscolor {
     width: 70px;
     height: 32px;
@@ -501,8 +500,6 @@ select:not([multiple]) {
     border-radius: 0;
     outline: none;
 }
-
-
 #tree-canvas {
     margin: 0px auto;
     display: block;
@@ -605,7 +602,7 @@ select:not([multiple]) {
 }
 
 @media only screen and (max-width: 768px) {
-    
+
     .logo-wrapper-mobile {
         margin-right: 0px;
     }
