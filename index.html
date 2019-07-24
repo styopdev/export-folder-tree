@@ -27,7 +27,7 @@
     </head>
     <body>
         <div class="wrapper">
-            <div class="sidebar">
+            <div class="sidebar" id="sidebar">
                 <div class="logo-wrapper">
                     <a href="">
                         <img src="img/logo_200x200.jpg" alt="logo">
@@ -42,14 +42,10 @@
             </div>
 
             
-            <div id="content" class="content flex">
+            <div id="layout" class="layout flex">
 
                 <div class="warning">
-                    <a id="sandwich-btn" onclick="toggleSidebar()">>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </a>
+
                     <span class="warning-message-top">
                         <span class="lb">
                             Dont worry we dont upload your files to our servers, 
@@ -71,7 +67,16 @@
                            data-related="twitterapi,twitter">
                         </a>
                     </div>
+
+                    <!--<a id="sandwich-btn" onclick="toggleSidebar()">-->
+                        <!--<span></span>-->
+                        <!--<span></span>-->
+                        <!--<span></span>-->
+                    <!--</a>-->
                 </div>
+                <div class="content">
+
+
                 <div id="settings" class="no-select">
                     <div class="settings-menu-box">
                         <ul class="settings-menu bg-color">
@@ -180,6 +185,8 @@
                     <form action="/file-upload"
                         class="dropzone"
                         id="my-awesome-dropzone"></form>
+                </div>
+
                 </div>
             </div>
         </div>

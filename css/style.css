@@ -51,7 +51,7 @@ body{
 .logo-wrapper a {
     display: block;
 }
-.content{
+.layout{
     position: relative;
     color: #4d4d4d;
     background: #ebeff2;
@@ -60,7 +60,12 @@ body{
     text-align: center;
     margin-left: 320px;
 }
-.content.flex{
+.layout.flex{
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*padding-top: 85px;*/
+}
+.content{
     display: flex;
     justify-content: center;
     padding-top: 85px;
@@ -485,10 +490,14 @@ select:not([multiple]) {
     border-radius: 0;
     outline: none;
 }
-#sandwich-btn{
-    display: none;
-    width: 30px;
-}
+/*#sandwich-btn{*/
+    /*position: absolute;*/
+    /*top: 15px;*/
+    /*right: 15px;*/
+    /*display: none;*/
+    /*width: 30px;*/
+    /*cursor: pointer;*/
+/*}*/
 #sandwich-btn > span{
     display: block;
     height: 4px;
@@ -574,16 +583,17 @@ select:not([multiple]) {
 }
 
 @media only screen and (max-width: 992px) {
-    #sandwich-btn{
-        display: block;
-    }
+
+    /*#sandwich-btn{*/
+        /*display: block;*/
+    /*}*/
     .sidebar {
-        position: fixed;
-        width: 320px;
-        z-index: 999;
+        /*position: fixed;*/
+        /*width: 320px;*/
+        /*z-index: 999;*/
         display: none;
     }
-    .content {
+    .layout {
         width: 100%;
         margin-left: 0;
     }
@@ -591,4 +601,62 @@ select:not([multiple]) {
 
 @media only screen and (max-width: 768px) {
 
+    .warning {
+        justify-content: start;
+        flex-direction: column;
+        position: relative;
+        top: inherit;
+        left: inherit;
+        right: inherit;
+        padding: 15px 30px;
+        height: auto;
+    }
+    .social-nav {
+        position: relative;
+        top: inherit;
+        left: inherit;
+        right: inherit;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .warning-message-top {
+        margin: inherit;
+        line-height: 16px;
+        font-size: 13px;
+    }
+    .content {
+        padding-top: 50px;
+    }
+    #options-box{
+        width: 90%;
+    }
+}
+
+
+@media only screen and (max-width: 640px) {
+    .et-btn-submit {
+        position: relative;
+        top: inherit;
+        right: inherit;
+        width: 100%;
+    }
+    #options-box {
+        width: 100%;
+        text-align: center;
+        position: relative;
+        top: inherit;
+        left: inherit;
+        right: inherit;
+        margin: auto;
+        background: #ebeff2;
+        border: 1px solid #808080;
+        padding: 15px 30px;
+    }
+    #zone {
+        height: auto;
+        background: transparent;
+    }
+    #zone .dropzone.dz-clickable{
+        display: none;
+    }
 }
