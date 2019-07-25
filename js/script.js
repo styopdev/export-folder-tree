@@ -31,8 +31,8 @@ function retry() {
     document.getElementById('zone').style.display = 'inline-block';
     document.getElementById('tree-canvas').remove();
     document.getElementById('settings').style.display = 'none';
-    var content = document.getElementById("content");
-    content.classList.add("flex");
+    var layout = document.getElementById("layout");
+    layout.classList.add("flex");
 }
 
 function generateFromGithub() {
@@ -105,8 +105,8 @@ function processFile(zip) {
     document.getElementById('generated-tree').appendChild(canvasElement);
     document.getElementById('zone').style.display = 'none';
 
-    var content = document.getElementById("content");
-    content.classList.remove("flex");
+    var layout = document.getElementById("layout");
+    layout.classList.remove("flex");
     document.getElementById("settings").style.display = "block";
 
     drawTree();
@@ -183,6 +183,17 @@ function readFile(file) {
             });
     };
 }
+
+// function toggleSidebar() {
+//     console.log('toggleSidebar');
+//     var sidebar = document.getElementById('sidebar');
+//     if (sidebar.style.display === "none") {
+//         sidebar.style.display = "block";
+//     } else {
+//         sidebar.style.display = "none";
+//     }
+//
+// }
 
 Dropzone.options.myAwesomeDropzone = {
     paramName: "file",

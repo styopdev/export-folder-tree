@@ -51,7 +51,19 @@ body{
 .logo-wrapper a {
     display: block;
 }
-.content{
+.logo-wrapper-mobile {
+    display: none;
+    width: 53px;
+    height: 38px;
+}
+.logo-wrapper-mobile img {
+    width: 100%;
+    display: block;
+}
+.logo-wrapper-mobile a {
+    display: block;
+}
+.layout{
     position: relative;
     color: #4d4d4d;
     background: #ebeff2;
@@ -60,7 +72,12 @@ body{
     text-align: center;
     margin-left: 320px;
 }
-.content.flex{
+.layout.flex{
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*padding-top: 85px;*/
+}
+.content{
     display: flex;
     justify-content: center;
     padding-top: 85px;
@@ -108,7 +125,6 @@ canvas{
 #zone .dropzone .dz-preview .dz-details .dz-size{
     margin-bottom: 0;
 }
-
 
 #settings{
     display: none;
@@ -476,7 +492,6 @@ select:not([multiple]) {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
-
 .jscolor {
     width: 70px;
     height: 32px;
@@ -485,7 +500,6 @@ select:not([multiple]) {
     border-radius: 0;
     outline: none;
 }
-
 #tree-canvas {
     margin: 0px auto;
     display: block;
@@ -501,6 +515,9 @@ select:not([multiple]) {
     right: 0;
     height: 30px;
     background: #ffffff;
+}
+.warning-message-top{
+    line-height: 20px;
 }
 .social-nav {
     position: absolute;
@@ -559,4 +576,124 @@ select:not([multiple]) {
           -ms-user-select: none; /* Internet Explorer/Edge */
               user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome and Opera */
+}
+
+@media only screen and (max-width: 1048px) and (min-width: 992px)  {
+    .warning {
+        justify-content: start;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+
+    .sidebar {
+        display: none;
+    }
+    .logo-wrapper-mobile{
+        display: block;
+        margin-right: 30px;
+    }
+    .layout {
+        width: 100%;
+        margin-left: 0;
+    }
+    .warning {
+        justify-content: start;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .logo-wrapper-mobile {
+        margin-right: 0px;
+    }
+    .warning {
+        justify-content: start;
+        flex-direction: column;
+        position: relative;
+        top: inherit;
+        left: inherit;
+        right: inherit;
+        padding: 15px 30px;
+        height: auto;
+    }
+    .social-nav {
+        position: relative;
+        top: inherit;
+        left: inherit;
+        right: inherit;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .warning-message-top {
+        line-height: 16px;
+        font-size: 13px;
+    }
+    .content {
+        padding-top: 50px;
+    }
+    #options-box{
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+
+
+    .content {
+        padding-top: 15px;
+    }
+    .et-btn-submit {
+        position: relative;
+        top: inherit;
+        right: inherit;
+        width: 100%;
+        margin-top: 15px;
+    }
+    .et-btn{
+        width: 100%;
+    }
+    #options-box {
+        width: 100%;
+        text-align: center;
+        position: relative;
+        top: inherit;
+        left: inherit;
+        right: inherit;
+        margin: auto;
+        background: #ebeff2;
+        border: 1px solid #808080;
+        padding: 35px 30px;
+    }
+    #zone {
+        height: auto;
+        background: transparent;
+    }
+    #zone .dropzone.dz-clickable{
+        display: none;
+    }
+    .settings-menu-box {
+        width: 100%;
+        display: block;
+        padding-left: 15px;
+    }
+    .generated-tree{
+        width: 100%;
+        overflow-y: auto;
+    }
+    .watermark-row {
+        width: 100%;
+        padding-left: 15px;
+    }
+    .settings-menu{
+        display: block;
+        margin-bottom: 15px;
+    }
+    .settings-menu.styles li {
+        padding-left: 0px;
+    }
+    #settings {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
 }
