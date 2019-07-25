@@ -184,6 +184,13 @@ function readFile(file) {
     };
 }
 
+function switchTab(elem) {
+    document
+        .querySelectorAll('.tabs .tab.active')
+        .forEach(tab => tab.classList.remove('active'));
+    elem.classList.add('active');
+}
+
 Dropzone.options.myAwesomeDropzone = {
     paramName: "file",
     maxFiles: 1,
