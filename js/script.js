@@ -18,10 +18,13 @@ function openSelectFile() {
     document.getElementById('my-awesome-dropzone').click();
 }
 
-function download() {
+function initDownload() {
     var canvas = document.getElementById('tree-canvas');
     var imageData = canvas.toDataURL();
-    window.location.href = imageData.replace("image/png", "image/octet-stream");
+    var button = document.getElementById('download-button');
+    button.setAttribute('href', imageData);
+
+    button.click();
 }
 
 function retry() {

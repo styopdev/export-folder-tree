@@ -112,7 +112,7 @@ canvas{
 
 #settings{
     display: none;
-    padding-top: 80px;
+    padding-top: 40px;
     padding-bottom: 80px;
 }
 
@@ -513,6 +513,7 @@ select:not([multiple]) {
     color: #000000;
     border: 3px solid #000000;
     font-size: 15px;
+    text-decoration: none;
 }
 .download-button:hover {
     background-color: #000000;
