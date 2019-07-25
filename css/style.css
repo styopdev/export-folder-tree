@@ -525,6 +525,7 @@ select:not([multiple]) {
     right: 10px;
 }
 .download-button {
+    cursor: pointer;
     margin-top: 15px;
     padding: 7px 30px;
     color: #000000;
