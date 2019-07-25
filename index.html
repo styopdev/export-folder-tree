@@ -4,9 +4,7 @@
         <meta charset="UTF-8">
         <link rel="icon" href="img/favicon.png" type="image/x-icon"/>
         <title>Generate your folder's tree based on uploaded zip or github repository</title>
-
-        <!--Favicon -->
-
+        <!-- favicon -->
         <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-touch-icon.png">
         <link rel="apple-touch-icon" sizes="512x512" href="img/favicon/apple-icon-512x512.png">
         <link rel="apple-touch-icon" sizes="192x192" href="img/favicon/apple-icon-192x192.png">
@@ -17,8 +15,7 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
-        <!--end of Favicon -->
-
+        <!-- end of favicon -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/dropzone.css">
         <link rel="stylesheet" href="css/reset.css">
@@ -41,12 +38,9 @@
                     </p>
                 </div>
             </div>
-
             
             <div id="layout" class="layout flex">
-
                 <div class="warning">
-
                     <div class="logo-wrapper-mobile mb-7">
                         <a href="">
                             <img src="img/logo-small.png" alt="logo">
@@ -61,6 +55,7 @@
                             everything will be done on your own computer.
                         </span> 
                     </span>
+
                     <div class="social-nav">
                         <a class="github-button" href="https://github.com/styopdev/folder-to-tree" data-size="large" data-show-count="true" aria-label="Star styopdev/folder-to-tree on GitHub">Star</a>
 
@@ -74,122 +69,122 @@
                            data-related="twitterapi,twitter">
                         </a>
                     </div>
-
                 </div>
+
                 <div class="content">
-
-
-                <div id="settings" class="no-select">
-                    <div class="settings-menu-box">
-                        <ul class="settings-menu bg-color">
-                            <li>
-                                <label class="inline">
-                                    <input class="jscolor" onchange="changeSetting('background', '#' + this.value)" value="000000">
-                                </label>
-                                <label class="settings-menu-item inline">Background Color</label>
-                            </li>
-                            <li>
-                                <label class="inline">
-                                    <input class="jscolor" onchange="changeSetting('foreground', '#' + this.value)" value="00FA00">
-                                </label>
-                                <label class="settings-menu-item inline">Foreground Color</label>
-                            </li>
-                        </ul>
-                        <ul class="settings-menu styles">
-                            <li>
-                                <label class="checkbox-btn-container inline">
-                                    <input id="with-dashes" name="with-dashes" type="checkbox" onchange="changeSetting('withDashes', this.checked)" checked="checked">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="with-dashes" class="settings-menu-item inline">With Dashes</label>
-                            </li>
-                            <li>
-                                <label class="checkbox-btn-container inline">
-                                    <input id="with-sizes" name="with-icons" type="checkbox" onchange="changeSetting('withSizes', this.checked)" checked="checked">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="with-sizes" class="settings-menu-item inline">With Sizes</label>
-                            </li>
-                        </ul>
-                        <ul class="settings-menu typograpgy">
-                            <li>
-                                <div class="select-wrapper inline mr-12">
-                                    <select onchange="changeSetting('fontSize', this.value)" name="et-font-size" class="inline" id="et-font-size">
-                                        <option value="12">12px</option>
-                                        <option value="13">13px</option>
-                                        <option value="14">14px</option>
-                                        <option value="15">15px</option>
-                                        <option value="16" selected>16px</option>
-                                        <option value="17">17px</option>
-                                        <option value="18">18px</option>
-                                    </select>
-                                    <i class="arrow-down"></i>
-                                </div>
-                                <label class="settings-menu-item inline">Font Size</label>
-                            </li>
-                            <li>
-                                <div class="select-wrapper inline mr-12">
-                                    <select onchange="changeSetting('lineHeight', this.value)" name="et-line-height" class="inline" id="et-line-height">
-                                        <option value="12">12px</option>
-                                        <option value="14">14px</option>
-                                        <option value="16">16px</option>
-                                        <option value="18">18px</option>
-                                        <option value="20">20px</option>
-                                        <option value="22" selected>22px</option>
-                                        <option value="24">24px</option>
-                                        <option value="26">26px</option>
-                                        <option value="28">28px</option>
-                                        <option value="30">30px</option>
-                                    </select>
-                                    <span class="arrow-down"></span>
-                                </div>
-                                <label class="settings-menu-item inline">Line Height</label>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div id="generated-tree" class="generated-tree">
-                        <a class="back cp" title="Try again">
-                            <div class="back-bg"></div>
-                            <img src="./img/reload.png" class="back-image" alt="Go back" onclick="retry()">
-                        </a>
-                    </div>
-                    <div class="watermark-row">
-                        <label class="checkbox-btn-container inline">
-                            <input id="no-watermark" name="with-watermark" type="checkbox" onchange="changeSetting('watermarkEnabled', !this.checked)">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label for="no-watermark" class="settings-menu-item inline">No watermark please ;)</label>
-                    </div>
-                    <div class="download-button-row">
-                        <a id="download-button" download="folder-to-tree.png" onclick="initDownload()" class="button download-button">Download</a>
-                    </div>
-
-                </div>
-                
-                <div id="zone">
-                    <div id="options-box">
-                        <div class="mb-10">
-                            <span onclick="openSelectFile()" class="et-btn cp">Select File</span>
+                    <div id="settings" class="no-select">
+                        <div class="settings-menu-box">
+                            <ul class="settings-menu bg-color">
+                                <li>
+                                    <label class="inline">
+                                        <input class="jscolor" onchange="changeSetting('background', '#' + this.value)" value="000000">
+                                    </label>
+                                    <label class="settings-menu-item inline">Background Color</label>
+                                </li>
+                                <li>
+                                    <label class="inline">
+                                        <input class="jscolor" onchange="changeSetting('foreground', '#' + this.value)" value="00FA00">
+                                    </label>
+                                    <label class="settings-menu-item inline">Foreground Color</label>
+                                </li>
+                            </ul>
+                            <ul class="settings-menu styles">
+                                <li>
+                                    <label class="checkbox-btn-container inline">
+                                        <input id="with-dashes" name="with-dashes" type="checkbox" onchange="changeSetting('withDashes', this.checked)" checked="checked">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label for="with-dashes" class="settings-menu-item inline">With Dashes</label>
+                                </li>
+                                <li>
+                                    <label class="checkbox-btn-container inline">
+                                        <input id="with-sizes" name="with-icons" type="checkbox" onchange="changeSetting('withSizes', this.checked)" checked="checked">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label for="with-sizes" class="settings-menu-item inline">With Sizes</label>
+                                </li>
+                            </ul>
+                            <ul class="settings-menu typograpgy">
+                                <li>
+                                    <div class="select-wrapper inline mr-12">
+                                        <select onchange="changeSetting('fontSize', this.value)" name="et-font-size" class="inline" id="et-font-size">
+                                            <option value="12">12px</option>
+                                            <option value="13">13px</option>
+                                            <option value="14">14px</option>
+                                            <option value="15">15px</option>
+                                            <option value="16" selected>16px</option>
+                                            <option value="17">17px</option>
+                                            <option value="18">18px</option>
+                                        </select>
+                                        <i class="arrow-down"></i>
+                                    </div>
+                                    <label class="settings-menu-item inline">Font Size</label>
+                                </li>
+                                <li>
+                                    <div class="select-wrapper inline mr-12">
+                                        <select onchange="changeSetting('lineHeight', this.value)" name="et-line-height" class="inline" id="et-line-height">
+                                            <option value="12">12px</option>
+                                            <option value="14">14px</option>
+                                            <option value="16">16px</option>
+                                            <option value="18">18px</option>
+                                            <option value="20">20px</option>
+                                            <option value="22" selected>22px</option>
+                                            <option value="24">24px</option>
+                                            <option value="26">26px</option>
+                                            <option value="28">28px</option>
+                                            <option value="30">30px</option>
+                                        </select>
+                                        <span class="arrow-down"></span>
+                                    </div>
+                                    <label class="settings-menu-item inline">Line Height</label>
+                                </li>
+                            </ul>
                         </div>
 
-                        <div class="mb-10">
-                            <span class="ttu db fs-18 mb-7">OR</span>
-                            <span class="db">Generate tree for github repository</span>
+                        <div id="generated-tree" class="generated-tree">
+                            <a class="back cp" title="Try again">
+                                <div class="back-bg"></div>
+                                <img src="./img/reload.png" class="back-image" alt="Go back" onclick="retry()">
+                            </a>
                         </div>
 
-                        <label>
-                            <div class="et-form">
-                                <input id="github-url" class="et-btn-input" placeholder="Enter your github repository url..." type="text">
-                                <a id="generate" class="et-btn et-btn-submit cp" onclick="generateFromGithub()">Submit</a>
+                        <div class="watermark-row">
+                            <label class="checkbox-btn-container inline">
+                                <input id="no-watermark" name="with-watermark" type="checkbox" onchange="changeSetting('watermarkEnabled', !this.checked)">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="no-watermark" class="settings-menu-item inline">No watermark please ;)</label>
+                        </div>
+
+                        <div class="download-button-row">
+                            <a id="download-button" download="folder-to-tree.png" onclick="initDownload()" class="button download-button">Download</a>
+                        </div>
+                    </div>
+
+                    <div id="zone">
+                        <div id="options-box">
+                            <div class="mb-10">
+                                <span onclick="openSelectFile()" class="et-btn cp">Select File</span>
                             </div>
-                        </label>
-                    </div>
-                    <form action="/file-upload"
-                        class="dropzone"
-                        id="my-awesome-dropzone"></form>
-                </div>
 
+                            <div class="mb-10">
+                                <span class="ttu db fs-18 mb-7">OR</span>
+                                <span class="db">Generate tree for github repository</span>
+                            </div>
+
+                            <label>
+                                <div class="et-form">
+                                    <input id="github-url" class="et-btn-input" placeholder="Enter your github repository url..." type="text">
+                                    <a id="generate" class="et-btn et-btn-submit cp" onclick="generateFromGithub()">Submit</a>
+                                </div>
+                            </label>
+                        </div>
+
+                        <form action="/file-upload"
+                            class="dropzone"
+                            id="my-awesome-dropzone">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -201,23 +196,24 @@
         <script type="text/javascript" src="js/script.js"></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 
-        <script>window.twttr = (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0],
-                t = window.twttr || {};
-            if (d.getElementById(id)) return t;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "https://platform.twitter.com/widgets.js";
-            fjs.parentNode.insertBefore(js, fjs);
+        <script>
+            window.twttr = (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0],
+                    t = window.twttr || {};
+                if (d.getElementById(id)) return t;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
 
-            t._e = [];
-            t.ready = function(f) {
-                t._e.push(f);
-            };
+                t._e = [];
+                t.ready = function(f) {
+                    t._e.push(f);
+                };
 
-            return t;
-        }(document, "script", "twitter-wjs"));</script>
-
+                return t;
+            }(document, "script", "twitter-wjs"));
+        </script>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45124943-4"></script>
