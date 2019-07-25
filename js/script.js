@@ -184,17 +184,6 @@ function readFile(file) {
     };
 }
 
-// function toggleSidebar() {
-//     console.log('toggleSidebar');
-//     var sidebar = document.getElementById('sidebar');
-//     if (sidebar.style.display === "none") {
-//         sidebar.style.display = "block";
-//     } else {
-//         sidebar.style.display = "none";
-//     }
-//
-// }
-
 Dropzone.options.myAwesomeDropzone = {
     paramName: "file",
     maxFiles: 1,
