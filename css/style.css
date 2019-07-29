@@ -1,18 +1,18 @@
-*{
+* {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-html, body{
+html, body {
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-body{
+body {
     margin: 0;
     padding: 0;
     font-size: 14px;
@@ -21,7 +21,7 @@ body{
     font-family: 'Open Sans', sans-serif;
 
 }
-.wrapper{
+.wrapper {
     position: relative;
 }
 .sidebar {
@@ -63,7 +63,7 @@ body{
 .logo-wrapper-mobile a {
     display: block;
 }
-.layout{
+.layout {
     position: relative;
     color: #4d4d4d;
     background: #ebeff2;
@@ -72,20 +72,15 @@ body{
     text-align: center;
     margin-left: 320px;
 }
-.layout.flex{
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*padding-top: 85px;*/
-}
-.content{
+.content {
     display: flex;
     justify-content: center;
     padding-top: 85px;
 }
-canvas{
+canvas {
     display: inline-block;
 }
-#zone .dropzone.dz-clickable{
+#zone .dropzone.dz-clickable {
     height: 100%;
     background: #ffffff;
     display: flex;
@@ -93,7 +88,7 @@ canvas{
     align-items: center;
     border: none;
 }
-#zone .dropzone.dz-clickable:hover{
+#zone .dropzone.dz-clickable:hover {
     background: #d9dcde;
 }
 #zone {
@@ -111,7 +106,7 @@ canvas{
     -webkit-box-shadow: 0 0 0 1px rgba(255,255,255,.05), inset 0 0 0.25em 0 rgba(0,0,0,.25);
     box-shadow: 0 0 0 1px rgba(255,255,255,.05), inset 0 0 0.25em 0 rgba(0,0,0,.25);
 }
-#zone .dropzone .dz-preview.dz-file-preview .dz-image{
+#zone .dropzone .dz-preview.dz-file-preview .dz-image {
     background-image: url("img/zip.png") !important;
     background-repeat: no-repeat;
     background-size: cover;
@@ -119,19 +114,17 @@ canvas{
     height: 120px;
     position: relative;
 }
-#zone .dropzone .dz-preview .dz-details{
+#zone .dropzone .dz-preview .dz-details {
     top: -50px;
 }
-#zone .dropzone .dz-preview .dz-details .dz-size{
+#zone .dropzone .dz-preview .dz-details .dz-size {
     margin-bottom: 0;
 }
-
-#settings{
+#settings {
     display: none;
     padding-top: 0px;
     padding-bottom: 80px;
 }
-
 .dropzone .dz-message {
     margin: 0;
     display: inline-block;
@@ -157,10 +150,10 @@ canvas{
     border: 1px solid #808080;
     padding: 15px 30px;
 }
-.et-form{
+.et-form {
     position: relative;
 }
-.et-btn{
+.et-btn {
     background: #fb4525;
     color: white;
     display: inline-block;
@@ -179,7 +172,7 @@ canvas{
     border-radius: 0;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
-.et-btn:hover{
+.et-btn:hover {
     background: #fb4525;
 }
 .et-btn-input {
@@ -203,39 +196,38 @@ canvas{
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
 }
-.et-btn-submit{
+.et-btn-submit {
     position: absolute;
     top: 0;
     right: 0;
     height: 34px;
     line-height: 21px;
 }
-.db{
+.db {
     display: block;
 }
-
-.mb-15{
+.mb-15 {
     margin-bottom: 15px;
 }
-.mb-10{
+.mb-10 {
     margin-bottom: 10px;
 }
-.mb-7{
+.mb-7 {
     margin-bottom: 15px;
 }
-.mr-12{
+.mr-12 {
     margin-right: 8px;
 }
-.ttu{
+.ttu {
     text-transform: uppercase;
 }
-.fs-18{
+.fs-18 {
     font-size: 18px;
 }
-.cp{
+.cp {
     cursor: pointer;
 }
-.back{
+.back {
     display: block;
     width: 30px;
     height: 30px;
@@ -244,8 +236,7 @@ canvas{
     right: 20px;
     z-index: 99;
 }
-
-.back-bg{
+.back-bg {
     display: block;
     width: 30px;
     height: 30px;
@@ -256,7 +247,7 @@ canvas{
     z-index: 101;
     opacity: 0.8;
 }
-.back-image{
+.back-image {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -265,65 +256,58 @@ canvas{
     opacity: 1;
     padding: 1px;
 }
-.back:hover .back-bg{
+.back:hover .back-bg {
     opacity: 1;
 }
-
-.generated-tree{
+.generated-tree {
     position: relative;
     width: 582px;
     margin: 20px auto auto auto;
 }
-
-.settings-menu-box{
+.settings-menu-box {
     display: flex;
     width: 582px;
     margin: 0 auto;
     font-size: 0;
     text-align: left;
 }
-.settings-menu{
+.settings-menu {
     display: inline-block;
     vertical-align: top;
     font-size: 14px;
 }
-
-.settings-menu li{
+.settings-menu li {
     display: block;
     text-align: left;
     margin-top: 15px;
     margin-bottom: 0px;
     padding-right: 15px;
 }
-.settings-menu li:first-child{
+.settings-menu li:first-child {
     margin-top: 5px;
     margin-bottom: 10px;
 }
-
-.settings-menu.bg-color li{
+.settings-menu.bg-color li {
     margin-top: 0px;
     margin-bottom: 10px;
 }
-
-.settings-menu.styles li{
+.settings-menu.styles li {
     padding-left: 10px;
 }
-.settings-menu.bg-color li:last-child{
+.settings-menu.bg-color li:last-child {
     margin-bottom: 0px;
 }
-
-.settings-menu.typograpgy li{
+.settings-menu.typograpgy li {
     margin-top: 0px;
     margin-bottom: 10px;
 }
-.settings-menu.typograpgy li:last-child{
+.settings-menu.typograpgy li:last-child {
     margin-bottom: 0px;
 }
-
-.settings-menu-item{
+.settings-menu-item {
     font-size: 14px;
 }
-.inline{
+.inline {
     display: inline-block;
     vertical-align: middle;
 }
@@ -404,25 +388,6 @@ select:not([multiple]) {
     padding: .5em;
     padding-right: 1.5em
 }
-.select-wrapper .arrow-down{
-    width: 12px;
-    height: 12px;
-    background-image: url('../img/left-512.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    right: 5px;
-    top: 11px;
-    z-index: 99;
-    display: inline-block;
-    transform: rotate(270deg);
-}
-
-#mySelect {
-    border-radius: 0
-}
-/* Select */
-
 /* Custom checkbox container */
 .checkbox-btn-container {
     display: inline-block;
@@ -437,7 +402,6 @@ select:not([multiple]) {
     -ms-user-select: none;
     user-select: none;
 }
-
 /* Hide the browser's default checkbox */
 .checkbox-btn-container input {
     position: absolute;
@@ -446,7 +410,6 @@ select:not([multiple]) {
     height: 0;
     width: 0;
 }
-
 /* Create a custom checkbox */
 .checkbox-btn-container .checkmark {
     position: absolute;
@@ -516,7 +479,7 @@ select:not([multiple]) {
     height: 30px;
     background: #ffffff;
 }
-.warning-message-top{
+.warning-message-top {
     line-height: 20px;
 }
 .social-nav {
@@ -587,7 +550,6 @@ select:not([multiple]) {
 }
 
 @media only screen and (max-width: 992px) {
-
     .sidebar {
         display: none;
     }
@@ -605,7 +567,6 @@ select:not([multiple]) {
 }
 
 @media only screen and (max-width: 768px) {
-
     .logo-wrapper-mobile {
         margin-right: 0px;
     }
@@ -634,7 +595,7 @@ select:not([multiple]) {
     .content {
         padding-top: 50px;
     }
-    #options-box{
+    #options-box {
         width: 90%;
     }
 }
@@ -650,7 +611,7 @@ select:not([multiple]) {
         width: 100%;
         margin-top: 15px;
     }
-    .et-btn{
+    .et-btn {
         width: 100%;
     }
     #options-box {
@@ -669,7 +630,7 @@ select:not([multiple]) {
         height: auto;
         background: transparent;
     }
-    #zone .dropzone.dz-clickable{
+    #zone .dropzone.dz-clickable {
         display: none;
     }
     .settings-menu-box {
@@ -677,7 +638,7 @@ select:not([multiple]) {
         display: block;
         padding-left: 15px;
     }
-    .generated-tree{
+    .generated-tree {
         width: 100%;
         overflow-y: auto;
     }
@@ -685,7 +646,7 @@ select:not([multiple]) {
         width: 100%;
         padding-left: 15px;
     }
-    .settings-menu{
+    .settings-menu {
         display: block;
         margin-bottom: 15px;
     }
