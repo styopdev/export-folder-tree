@@ -543,6 +543,17 @@ select:not([multiple]) {
                                     supported by Chrome and Opera */
 }
 
+.loading {
+    display: none;
+    position: absolute;
+    z-index: 21;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
 @media only screen and (max-width: 1048px) and (min-width: 992px)  {
     .warning {
         justify-content: start;
