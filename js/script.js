@@ -68,36 +68,15 @@ function isRoot(fileName) {
 }
 
 function toTree(fileNameList, files) {
-    var tree = [];
-    /* Sort files and folders by pushing files to the end of the list */
-    fileNameList.sort((prev, next) => {
-        var prevSlashesLength = prev.match(/\//ig);
-        var nextSlashesLength = next.match(/\//ig);
-
-        if (isRoot(prev) || isRoot(next)) {
-            return 0;
-        }
-
-        if (prevSlashesLength < nextSlashesLength) {
-            return 1;
-        }
-        if (prevSlashesLength > nextSlashesLength) {
-            return -1;
-        }
-
-        return 0;
-    });
+    debugger;
+    var tree = new Tree();
+    tree._root = { value: fileNameList[0].replace('/', ''), children: [] };
 
     fileNameList.forEach(file => {
-        var isFolder = file.endsWith('/');
         var filePaths = file.split('/').filter(path => !!path);
-
-        tree.push({
-            path: filePaths[filePaths.length - 1],
-            nestLevel: filePaths.length - 1,
-            isFolder: isFolder,
-            size: files[file]._data.uncompressedSize
-        });
+        if (!isRoot(file)) {
+            tree.add(filePaths[filePaths.length - 1], filePaths[filePaths.length - 2]);
+        }
     });
 
     return tree;
