@@ -9,9 +9,10 @@ function Tree() {
         walk(this._root);
     }
 
-    this.add = function(value, parentValue) {
+    this.add = function(value, metadata, parentValue) {
         var newNode = {
           value,
+          metadata,
           children: []
         };
     
