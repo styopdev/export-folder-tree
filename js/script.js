@@ -2,7 +2,6 @@ var unzip = new JSZip();
 var reader = new FileReader();
 var fileNames;
 var fileNamesTree;
-var canvasHeight;
 var imageStyles = {
     background: '#000000',
     foreground: '#00FA00',
@@ -68,36 +67,18 @@ function isRoot(fileName) {
 }
 
 function toTree(fileNameList, files) {
-    var tree = [];
-    /* Sort files and folders by pushing files to the end of the list */
-    fileNameList.sort((prev, next) => {
-        var prevSlashesLength = prev.match(/\//ig);
-        var nextSlashesLength = next.match(/\//ig);
-
-        if (isRoot(prev) || isRoot(next)) {
-            return 0;
-        }
-
-        if (prevSlashesLength < nextSlashesLength) {
-            return 1;
-        }
-        if (prevSlashesLength > nextSlashesLength) {
-            return -1;
-        }
-
-        return 0;
-    });
+    var tree = new Tree();
+    tree._root = { value: fileNameList[0].replace('/', ''),  metadata: { isFolder: true }, children: [] };
 
     fileNameList.forEach(file => {
-        var isFolder = file.endsWith('/');
         var filePaths = file.split('/').filter(path => !!path);
+        var isFolder = file.endsWith('/');
+        var size = files[file]._data.uncompressedSize;
+        var nestLevel = filePaths.length - 1;
 
-        tree.push({
-            path: filePaths[filePaths.length - 1],
-            nestLevel: filePaths.length - 1,
-            isFolder: isFolder,
-            size: files[file]._data.uncompressedSize
-        });
+        if (!isRoot(file)) {
+            tree.add(filePaths[filePaths.length - 1], { isFolder, size, nestLevel }, filePaths[filePaths.length - 2]);
+        }
     });
 
     return tree;
@@ -107,7 +88,7 @@ function processFile(zip) {
     fileNames = Object.keys(zip.files);
     fileNamesTree = toTree(fileNames, zip.files);
 
-    canvasHeight = fileNames.length * imageStyles.lineHeight + 50;
+    canvasHeight = fileNames.length * +imageStyles.lineHeight + 50;
     var canvasElement = document.createElement('canvas');
 
     canvasElement.setAttribute('id', 'tree-canvas');
@@ -122,6 +103,7 @@ function processFile(zip) {
 }
 
 function drawTree() {
+    var topShift = 30 - +imageStyles.lineHeight;
     var canvas = document.getElementById('tree-canvas');
     canvas.width = 582;
     canvas.height = canvasHeight;
@@ -134,36 +116,47 @@ function drawTree() {
     context.fillStyle = imageStyles.background;
     context.fillRect(0, 0, canvas.width, canvasHeight);
 
-    fileNamesTree.forEach(function (file, index) {
+    const drawFilePath = (branch) => {
         context.beginPath();
         context.fillStyle = imageStyles.foreground;
         context.font =  imageStyles.fontSize + "px Arial, Helvetica, sans-serif";
 
-        var fileName = file.path;
-        var leftShift = 25 + file.nestLevel * 25;
-        var topShift = imageStyles.lineHeight * index + 30;
+        var nestLevel = branch.metadata && branch.metadata.nestLevel || 0;
+        var fileName = branch.value;
+        var leftShift = 25 + nestLevel * 25;
+        topShift += +imageStyles.lineHeight;
 
         if (imageStyles.withDashes) {
-            fileName = `${'-'.repeat(4 * file.nestLevel)} ${file.path}`;
+            fileName = `${'-'.repeat(4 * nestLevel)} ${branch.value}`;
             leftShift = 30;
-            topShift = imageStyles.lineHeight * index + 30;
 
-            if (file.nestLevel === 0) {
+            if (nestLevel === 0) {
                 leftShift -= 5;
             }
         }
 
-        if (file.isFolder) {
+        if (branch.metadata && branch.metadata.isFolder) {
             fileName += ' /';
         }
 
-        if (imageStyles.withSizes && file.size) {
-            var fileSize = (file.size / 1000).toFixed(2);
+        if (imageStyles.withSizes && branch.metadata && branch.metadata.size) {
+            var fileSize = (branch.metadata.size / 1000).toFixed(2);
             fileName += ` (~${ fileSize } kb)`;
         }
 
         context.fillText(fileName, leftShift, topShift);
-    });
+    }
+
+    const traverseFilesTree = (branch) => {
+        drawFilePath(branch);
+        if (branch.children.length) {
+            branch.children.forEach(chiildBranch => {
+                traverseFilesTree(chiildBranch);
+            });
+        }
+    };
+
+    traverseFilesTree(fileNamesTree._root, 0);
 
     if (imageStyles.watermarkEnabled) {
         context.font =  "12px Arial, Helvetica, sans-serif";
@@ -175,7 +168,7 @@ function drawTree() {
 function changeSetting(key, value) {
     imageStyles[key] = value;
 
-    canvasHeight = fileNames.length * imageStyles.lineHeight + 50;
+    canvasHeight = fileNames.length * +imageStyles.lineHeight + 30;
     var canvas = document.getElementById('tree-canvas');
     canvas.height = canvasHeight;
 
