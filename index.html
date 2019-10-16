@@ -11,7 +11,7 @@
         <link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
         <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-        <link rel="manifest" href="img/favicon/manifest.json">
+        <link rel="manifest" href="img/favicon/site.webmanifest">
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
@@ -31,15 +31,16 @@
                         <img src="img/logo_200x200.jpg" alt="logo">
                     </a>
                 </div>
-
+                
                 <div class="description">
                     <p>
                         Upload your zip or use any public github repository to generate your files' tree preview image.
                     </p>
                 </div>
             </div>
-
+            
             <div id="layout" class="layout flex">
+                <img id="loading" class="loading" src="./img/loading.svg" alt="">
                 <div class="warning">
                     <div class="logo-wrapper-mobile mb-7">
                         <a href="">
@@ -116,7 +117,6 @@
                                             <option value="17">17px</option>
                                             <option value="18">18px</option>
                                         </select>
-                                        <i class="arrow-down"></i>
                                     </div>
                                     <label class="settings-menu-item inline">Font Size</label>
                                 </li>
@@ -134,7 +134,6 @@
                                             <option value="28">28px</option>
                                             <option value="30">30px</option>
                                         </select>
-                                        <span class="arrow-down"></span>
                                     </div>
                                     <label class="settings-menu-item inline">Line Height</label>
                                 </li>
@@ -178,7 +177,7 @@
 
                             <label>
                                 <div class="et-form">
-                                    <input id="github-url" class="et-btn-input" placeholder="Enter your github repository url..." type="text">
+                                    <input autofocus id="github-url" class="et-btn-input" placeholder="Enter your github repository url..." type="text">
                                     <a id="generate" class="et-btn et-btn-submit cp" onclick="generateFromGithub()">Submit</a>
                                 </div>
                             </label>
@@ -197,6 +196,7 @@
         <script type="text/javascript" src="js/dropzone.js"></script>
         <script type="text/javascript" src="js/jszip.js"></script>
         <script type="text/javascript" src="js/jszip-utils.min.js"></script>
+        <script type="text/javascript" src="js/tree.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 
