@@ -554,6 +554,18 @@ select:not([multiple]) {
     margin: auto;
 }
 
+#invalid-message {
+    display: none;
+    position: inherit;
+    color: red;
+    z-index: 4000;
+    font-size: 14px;
+    padding: 10px;
+    margin-top: 10px;
+    line-height: 20px;
+    background-color: white;
+}
+
 @media only screen and (max-width: 1048px) and (min-width: 992px)  {
     .warning {
         justify-content: start;
