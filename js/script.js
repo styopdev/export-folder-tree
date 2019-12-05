@@ -147,16 +147,7 @@ function drawTree() {
         context.fillText(fileName, leftShift, topShift);
     }
 
-    const traverseFilesTree = (branch) => {
-        drawFilePath(branch);
-        if (branch.children.length) {
-            branch.children.forEach(chiildBranch => {
-                traverseFilesTree(chiildBranch);
-            });
-        }
-    };
-
-    traverseFilesTree(fileNamesTree._root, 0);
+    fileNamesTree._traverse(drawFilePath);
 
     if (imageStyles.watermarkEnabled) {
         context.font =  "12px Arial, Helvetica, sans-serif";
