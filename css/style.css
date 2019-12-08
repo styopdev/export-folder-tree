@@ -232,7 +232,7 @@ canvas {
     width: 30px;
     height: 30px;
     position: absolute;
-    top: 10px;
+    top: 50px;
     right: 20px;
     z-index: 99;
 }
@@ -467,6 +467,9 @@ select:not([multiple]) {
     margin: 0px auto;
     display: block;
 }
+#tree-json {
+    display: none;
+}
 .warning {
     display: flex;
     justify-content: center;
@@ -543,6 +546,33 @@ select:not([multiple]) {
                                     supported by Chrome and Opera */
 }
 
+.tabs {
+    text-align: left;
+}
+
+.tabs .tab {
+    width: 80px;
+    padding: 11px 0;
+    border: 1px solid #a6a6a6;
+    display: inline-block;
+    cursor: pointer;
+    border-bottom: 0px ;
+    text-align: center;
+}
+
+.tabs .tab:first-child {
+    border-top-left-radius: 5px;
+    border-right: 1px;
+}
+
+.tabs .tab:not(:first-child) {
+    margin-left: -4px;
+    border-top-right-radius: 5px;
+}
+
+.tabs .tab.active {
+    background-color: #ffffff;
+}
 .loading {
     display: none;
     position: absolute;
