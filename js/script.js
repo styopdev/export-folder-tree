@@ -109,7 +109,15 @@ function processFile(zip) {
     var canvasElement = document.createElement('canvas');
 
     canvasElement.setAttribute('id', 'tree-canvas');
+
+    var jsonElement = document.createElement('textarea');
+    jsonElement.setAttribute('id', 'tree-json');
+    jsonElement.style.width = '582px';
+    jsonElement.style.height = '600px';
+
     document.getElementById('generated-tree').appendChild(canvasElement);
+    document.getElementById('generated-tree').appendChild(jsonElement);
+
     document.getElementById('zone').style.display = 'none';
 
     var layout = document.getElementById("layout");
@@ -195,11 +203,20 @@ function readFile(file) {
     };
 }
 
-function switchTab(elem) {
-    document
-        .querySelectorAll('.tabs .tab.active')
-        .forEach(tab => tab.classList.remove('active'));
+function switchTab(elem, tabName) {
+    document.querySelectorAll('.tabs .tab.active')
+            .forEach(tab => tab.classList.remove('active'));
     elem.classList.add('active');
+
+    if (tabName === 'image') {
+        document.getElementById('tree-canvas').style.display = 'block';
+        document.getElementById('tree-json').style.display = 'none';
+    } else {
+        document.getElementById('tree-json').style.display = 'block';
+        document.getElementById('tree-canvas').style.display = 'none';
+
+        document.getElementById('tree-json').innerHTML = JSON.stringify(fileNamesTree, undefined, 4);
+    }
 }
 
 Dropzone.options.myAwesomeDropzone = {

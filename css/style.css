@@ -467,6 +467,9 @@ select:not([multiple]) {
     margin: 0px auto;
     display: block;
 }
+#tree-json {
+    display: none;
+}
 .warning {
     display: flex;
     justify-content: center;
